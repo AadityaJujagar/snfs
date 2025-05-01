@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const express = require("express");
 const app = express();
 
@@ -22,18 +21,25 @@ const PORT = process.env.PORT || 4000;
 dbConnect();
 app.use(express.json());
 app.use(cookieParser());
+
+// Allow CORS from both local development and production (Vercel)
 app.use(
   cors({
-    origin: "http://localhost:5173",
-    credentials: true,
+    origin: [
+      "http://localhost:5173", // Local development frontend
+      "https://snfs-fe.vercel.app", // Production frontend on Vercel
+    ],
+    credentials: true, // Allow cookies
   })
 );
+
 app.use(
   fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp/",
   })
 );
+
 cloudinaryConnect();
 
 app.use("/api/v1/auth", userRoutes);
