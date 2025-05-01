@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const axiosInstant = axios.create({});
+export const axiosInstant = axios.create({
+  withCredentials: true,
+});
 
 export const apiConnector = (method, url, bodyData, headers, params) => {
   return axiosInstant({
