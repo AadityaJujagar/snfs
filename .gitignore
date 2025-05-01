@@ -1,0 +1,57 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+client/node_modules/
+src/server/node_modules/
+
+# Build output
+dist/
+client/dist/
+src/server/dist/
+client/build/
+dist-ssr/
+
+# Environment files
+.env
+.env.*.local
+*.local
+src/server/.env
+
+
+# Coverage and testing
+coverage/
+*.lcov
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Editor directories and settings
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript specific
+*.tsbuildinfo
+
+# Cache
+.cache/
+.parcel-cache/
+.next/
+out/
+
+# Misc
+*.tgz
